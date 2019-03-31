@@ -67,7 +67,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> findAllUser(String username,String gender) {
-        List<User> allUser = userMapper.findAllUser(username,gender);
+        List<User> allUser = userMapper.findAllUser(username.trim(),gender.trim());
         return allUser;
     }
 

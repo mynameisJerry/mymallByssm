@@ -97,10 +97,10 @@
 							<span>性别</span>
 							&nbsp;&nbsp;&nbsp;&nbsp;
 							<label class="radio-inline">
-								<input type="radio" name="gender" value="男"> 男&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="radio" name="gender" value="1"> 男&nbsp;&nbsp;&nbsp;&nbsp;
 							</label>
 							<label class="radio-inline">
-								<input type="radio" name="gender" value="女"> 女
+								<input type="radio" name="gender" value="2"> 女
 							</label>
 						</div>
 					</div>

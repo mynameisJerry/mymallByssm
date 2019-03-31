@@ -29,7 +29,7 @@
     </select>
 
     <select id="findByName" parameterType="string" resultType="com.dragon.xiaomi.goods.pojo.Goods">
-        SELECT * FROM tb_goods WHERE name like '%${value}%' ORDER BY id
+        SELECT * FROM tb_goods WHERE name like "%"#{goodsname}"%" ORDER BY id
 
     </select>
 

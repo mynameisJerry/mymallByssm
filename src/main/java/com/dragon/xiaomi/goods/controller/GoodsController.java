@@ -72,6 +72,9 @@ public class GoodsController {
             return "/goodssearch";
         }
         List<Goods> list=goodsService.searchByName(goodsname);
+        for (Goods goods : list) {
+            System.out.println(goods);
+        }
         model.addAttribute("list",list);
         logger.info("查询商品"+list.toString());
         return "/goodssearch";

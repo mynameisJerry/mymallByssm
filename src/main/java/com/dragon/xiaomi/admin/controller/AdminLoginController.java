@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 /**
@@ -62,9 +63,17 @@ public class AdminLoginController {
 
     @RequestMapping("/searchuserlist")
     @ResponseBody
-    public List<User> searchUserList(HttpServletRequest request, HttpServletResponse response){
+    public List<User> searchUserList(HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException {
+        request.setCharacterEncoding("utf-8");
         String username = request.getParameter("username");
         String gender = request.getParameter("gender");
+
+
+        if ("1".equals(gender)) {
+            gender = "男";
+        } else if ("2".equals(gender)) {
+            gender = "女";
+        }
         List<User> userList=null;
         if (username != null || gender!=null) {
             userList = userService.findAllUser(username, gender);
