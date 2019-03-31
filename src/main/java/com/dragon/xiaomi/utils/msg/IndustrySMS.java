@@ -20,15 +20,16 @@ public class IndustrySMS {
 	 */
 	public static String execute(String to) {
 	    String code=  CodeUtil.sms();
-		String smsContent = "【龙琳科技】您的验证码为"+code+"，请于{2}分钟内正确输入，如非本人操作，请忽略此短信。";
+		String smsContent = "【小米商城】您的验证码为"+code+"，请于{2}分钟内正确输入，如非本人操作，请忽略此短信。";
 		String tmpSmsContent = null;
+		String templateid = "1510341760";
 	    try{
 	      tmpSmsContent = URLEncoder.encode(smsContent, "UTF-8");
 	    }catch(Exception e){
 	      e.printStackTrace();
 	    }
 	    String url = Config.BASE_URL + operation;
-	    String body = "accountSid=" + accountSid + "&to=" + to + "&smsContent=" + tmpSmsContent
+	    String body = "accountSid=" + accountSid + "&to=" + to + "&templateid=" + templateid + "&param="+code
 	        + HttpUtil.createCommonParam();
 	    // 提交请求
 	    String result = HttpUtil.post(url, body);

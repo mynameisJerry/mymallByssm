@@ -23,6 +23,7 @@ public class SmsController {
 
     @RequestMapping("/msg")
     public String getPhoneCode(String phone) {
+        System.out.println("phone ====>  "+phone);
         String phoneCode = IndustrySMS.execute(phone);
         jedisClientPool.set(phone, phoneCode);
         jedisClientPool.expire(phone, 120);

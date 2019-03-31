@@ -84,7 +84,7 @@
             <version>2.8.5</version>
         </dependency>
         <dependency>
-            <groupId>com.qianfeng</groupId>
+            <groupId>com.jerry</groupId>
             <artifactId>validatecode</artifactId>
             <version>1.0</version>
         </dependency>
@@ -160,7 +160,6 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-
     </build>
 
 </project>
